@@ -10,7 +10,12 @@ public class ArrayReview
      */
     public static String getNames(Employee[] employees)
     {
-        return "";
+      String longTerm = "";
+      for (Employee e : employees){
+        if (e.getYears() > 20)
+          longTerm += e.getName() + " ";
+      }
+      return longTerm;
     }
 
     /**
@@ -21,6 +26,18 @@ public class ArrayReview
      */
     public static double average(double[] nums)
     {
+      double sum = 0;
+      int count = 0;
+      for (double n : nums){
+        if (n > 0){
+          sum += n;
+          count++;
+        }
+      }
+      if (count > 0){
+        return sum/count;
+      } else {
         return 0.0;
+      }
     }
 }
